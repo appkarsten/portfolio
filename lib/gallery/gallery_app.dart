@@ -10,32 +10,52 @@ class GalleryApp extends StatefulWidget {
 }
 
 class _GalleryAppState extends State<GalleryApp> {
-  int activeIndex = 0;
+  int _activeIndex = 0;
+  final List<Widget> _screens = [
+    const GalleryPage(),
+    const AboutMePage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('MyGallery')),
-      body: [
-        GalleryPage(),
-        AboutMePage(),
-      ][activeIndex],
+      body: _screens[_activeIndex],
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: activeIndex,
-          onTap: (index) {
-            setState(() {
-              activeIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.browse_gallery_outlined),
-              label: 'Gallery',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_2_outlined),
-              label: 'Über mich',
-            ),
-          ]),
+        currentIndex: _activeIndex,
+        onTap: (index) {
+          setState(() {
+            _activeIndex = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.image),
+            label: 'Gallery',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Über mich',
+          ),
+        ],
+      ),
+      // bottomNavigationBar: NavigationBar(
+      //     selectedIndex: _activeIndex,
+      //     indicatorColor: Color(0xFFF7B3CA),
+      //     onDestinationSelected: (int index) {
+      //       setState(() {
+      //         _activeIndex = index;
+      //       });
+      //     },
+      //     destinations: const <Widget>[
+      //       NavigationDestination(
+      //         icon: Icon(Icons.image),
+      //         label: 'Gallery',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.person),
+      //         label: 'Über mich',
+      //       ),
+      //     ]),
     );
   }
 }
