@@ -19,43 +19,32 @@ class _GalleryAppState extends State<GalleryApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_activeIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _activeIndex,
-        onTap: (index) {
-          setState(() {
-            _activeIndex = index;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.image),
-            label: 'Gallery',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Über mich',
-          ),
-        ],
+      appBar: AppBar(
+        backgroundColor: Color(0xFF590724),
+        title: Text(
+          'MyGallery',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
-      // bottomNavigationBar: NavigationBar(
-      //     selectedIndex: _activeIndex,
-      //     indicatorColor: Color(0xFFF7B3CA),
-      //     onDestinationSelected: (int index) {
-      //       setState(() {
-      //         _activeIndex = index;
-      //       });
-      //     },
-      //     destinations: const <Widget>[
-      //       NavigationDestination(
-      //         icon: Icon(Icons.image),
-      //         label: 'Gallery',
-      //       ),
-      //       NavigationDestination(
-      //         icon: Icon(Icons.person),
-      //         label: 'Über mich',
-      //       ),
-      //     ]),
+      body: _screens[_activeIndex],
+      bottomNavigationBar: NavigationBar(
+          selectedIndex: _activeIndex,
+          indicatorColor: Color(0xFFF7B3CA),
+          onDestinationSelected: (int index) {
+            setState(() {
+              _activeIndex = index;
+            });
+          },
+          destinations: const <Widget>[
+            NavigationDestination(
+              icon: Icon(Icons.image),
+              label: 'Gallery',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person),
+              label: 'Über mich',
+            ),
+          ]),
     );
   }
 }

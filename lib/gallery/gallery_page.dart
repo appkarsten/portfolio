@@ -3,17 +3,9 @@ import 'package:portfolio/models/gallery_data.dart';
 
 class GalleryPage extends StatelessWidget {
   const GalleryPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF590724),
-        title: Text(
-          'MyGallery',
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
       body: GridView.count(
           mainAxisSpacing: 8,
           crossAxisSpacing: 8,
