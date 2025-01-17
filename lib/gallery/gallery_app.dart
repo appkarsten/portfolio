@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/gallery/about_me_page.dart';
 import 'package:portfolio/gallery/gallery_page.dart';
+import 'package:portfolio/colors.dart';
 
 class GalleryApp extends StatefulWidget {
   const GalleryApp({super.key});
@@ -20,16 +21,16 @@ class _GalleryAppState extends State<GalleryApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF590724),
+        backgroundColor: barBackground,
         title: Text(
           'MyGallery',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: barFont),
         ),
       ),
       body: _screens[_activeIndex],
       bottomNavigationBar: NavigationBar(
           selectedIndex: _activeIndex,
-          indicatorColor: Color(0xFFF7B3CA),
+          indicatorColor: buttonBackground,
           onDestinationSelected: (int index) {
             setState(() {
               _activeIndex = index;
