@@ -21,10 +21,6 @@ class GalleryPage extends StatelessWidget {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) =>
                             ImageDetailView(imageBox: galleryData[i])));
-                    // showBottomSheet(
-                    //     context: context,
-                    //     builder: (context) =>
-                    //         ImageDetailView(imageBox: galleryData[i]));
                   },
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

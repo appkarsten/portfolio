@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/gallery/about_me_page.dart';
 import 'package:portfolio/gallery/gallery_page.dart';
-import 'package:portfolio/colors.dart';
+import 'package:portfolio/gallery/colors.dart';
 
 class GalleryApp extends StatefulWidget {
   const GalleryApp({super.key});

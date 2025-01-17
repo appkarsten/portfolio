@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/colors.dart';
+import 'package:portfolio/gallery/colors.dart';
 import 'package:portfolio/models/gallery_data.dart';
 
 class ImageDetailView extends StatelessWidget {
